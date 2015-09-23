@@ -1,8 +1,8 @@
 {
   "id" : null,
   "name" : "Active Directory Auditing",
-  "description" : "Windows Active Directory Auditing Content Pack",
-  "category" : "Windows, Active Directory, Operating Systems",
+  "description" : "Active Directory Auditing Content Pack",
+  "category" : "Active Directory, Windows, Operating Systems, Security",
   "inputs" : [ {
     "title" : "WinLogs-gelf",
     "configuration" : {
@@ -145,7 +145,7 @@
           "range" : 604800
         },
         "lower_is_better" : false,
-        "trend" : false,
+        "trend" : true,
         "query" : "((EventID:4764 OR EventID:4735 OR EventID:4737 OR EventID:4755) AND facility:Microsoft\\-Windows\\-Security\\-Auditing AND NOT SamAccountName:\\-)"
       },
       "col" : 4,
@@ -160,7 +160,7 @@
           "range" : 604800
         },
         "lower_is_better" : false,
-        "trend" : false,
+        "trend" : true,
         "query" : "EventID:4767"
       },
       "col" : 2,
@@ -682,35 +682,6 @@
       "row" : 5,
       "cache_time" : 60
     }, {
-      "description" : "Interactive Logins (2hrs)",
-      "type" : "SEARCH_RESULT_COUNT",
-      "configuration" : {
-        "timerange" : {
-          "type" : "relative",
-          "range" : 7200
-        },
-        "lower_is_better" : false,
-        "trend" : false,
-        "query" : "(EventID:4624 AND (LogonType:2 OR LogonType:10 OR LogonType:11))"
-      },
-      "col" : 3,
-      "row" : 4,
-      "cache_time" : 60
-    }, {
-      "description" : "Interactive Logins (2hrs)",
-      "type" : "SEARCH_RESULT_CHART",
-      "configuration" : {
-        "timerange" : {
-          "type" : "relative",
-          "range" : 7200
-        },
-        "interval" : "minute",
-        "query" : "(EventID:4624 AND (LogonType:2 OR LogonType:10 OR LogonType:11))"
-      },
-      "col" : 1,
-      "row" : 4,
-      "cache_time" : 60
-    }, {
       "description" : "Failed Authentication Attempts By User",
       "type" : "QUICKVALUES",
       "configuration" : {
@@ -771,6 +742,35 @@
       },
       "col" : 1,
       "row" : 1,
+      "cache_time" : 60
+    }, {
+      "description" : "Interactive Logons",
+      "type" : "SEARCH_RESULT_CHART",
+      "configuration" : {
+        "timerange" : {
+          "type" : "relative",
+          "range" : 7200
+        },
+        "interval" : "minute",
+        "query" : "(EventID:4624 AND (LogonType:2 OR LogonType:10 OR LogonType:11))"
+      },
+      "col" : 1,
+      "row" : 4,
+      "cache_time" : 60
+    }, {
+      "description" : "Interactive Logins",
+      "type" : "SEARCH_RESULT_COUNT",
+      "configuration" : {
+        "timerange" : {
+          "type" : "relative",
+          "range" : 7200
+        },
+        "lower_is_better" : false,
+        "trend" : false,
+        "query" : "(EventID:4624 AND (LogonType:2 OR LogonType:10 OR LogonType:11))"
+      },
+      "col" : 3,
+      "row" : 4,
       "cache_time" : 60
     } ]
   }, {
