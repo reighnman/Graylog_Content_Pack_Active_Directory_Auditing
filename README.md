@@ -1,6 +1,6 @@
 # Active Directory Auditing
 
-This content pack provides several useful dashboards for audting Active Directory events:
+This content pack provides several useful dashboards for auditing Active Directory events:
 * DNS Object Summary - DNS Creations, Deletions
 * Group Object Summary - Group Creations, Modifications, Deletions, Membership Changes
 * User Object Summary - Account Creations, Deletions, Modifications, Lockouts, Unlocks
