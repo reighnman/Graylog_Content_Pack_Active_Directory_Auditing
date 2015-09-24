@@ -15,7 +15,7 @@ This content pack provides several useful dashboards for auditing Active Directo
 
 ## Requirements
 
-* nxLog collecting windows logs, other log collectors will work but may require modifying the searches to match the different fields outputted by other collectors
+* NXLog collecting windows logs, other log collectors will work but may require modifying the searches to match the different fields outputted by other collectors
 * Domain Controller secuirty policy with the following enabled:
 ** Audit Account Logon Events
 ** Audit Account Managmenet
