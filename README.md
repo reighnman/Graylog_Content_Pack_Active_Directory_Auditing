@@ -1,4 +1,4 @@
-# Active Directory Auditing
+# Active Directory Auditing Content Pack
 
 This content pack provides several useful dashboards for auditing Active Directory events:
 * DNS Object Summary - DNS Creations, Deletions
@@ -47,7 +47,7 @@ LogFile %ROOT%\data\nxlog.log
 
 <Output out> 
     Module      om_udp
-    Host        graylog.servername.com
+    Host        graylog.server.com
     Port        5414
     OutputType  GELF
 </Output>
@@ -56,7 +56,6 @@ LogFile %ROOT%\data\nxlog.log
     Path        in => out
 </Route>
 ```
-
 
 ## Screenshots
 
