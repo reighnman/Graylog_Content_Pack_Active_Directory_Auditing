@@ -1,5 +1,7 @@
 # Active Directory Auditing Content Pack
 
+Tested with nxLog/Graylog 1.2
+
 This content pack provides several useful dashboards for auditing Active Directory events:
 * DNS Object Summary - DNS Creations, Deletions
 * Group Object Summary - Group Creations, Modifications, Deletions, Membership Changes
