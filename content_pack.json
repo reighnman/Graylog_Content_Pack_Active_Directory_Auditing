@@ -13,20 +13,7 @@
     },
     "type" : "org.graylog2.inputs.gelf.udp.GELFUDPInput",
     "global" : true,
-    "extractors" : [ {
-      "title" : "WinDNS_Debug_Log",
-      "type" : "GROK",
-      "configuration" : {
-        "grok_pattern" : "%{WINDNS_TIME:Time} +%{WINDNS_THREADID:ThreadID} +%{NOTSPACE:Context} +%{BASE16NUM:InternalID} +%{WINDNS_PROTOCOL:Protocol} +%{WINDNS_SNDRCV:SndRcv} +%{WINDNS_IP:IP} +%{WINDNS_XID:XID}%{WINDNS_QUERYRESP:QueryResp}%{WINDNS_OPCODE:Opcode} +\\[%{WINDNS_FLAGSHEX:FlagsHex}%{WINDNS_FLAGSCHAR:FlagsChar}%{WINDNS_RESPONSE:Response}\\]%{WINDNS_QTYPE:QType}%{WINDNS_NAME:Name}"
-      },
-      "converters" : [ ],
-      "order" : 0,
-      "cursor_strategy" : "COPY",
-      "target_field" : "full_message",
-      "source_field" : "full_message",
-      "condition_type" : "REGEX",
-      "condition_value" : " PACKET\\s+[A-Z0-9]{16}\\s+UDP|TCP\\s"
-    } ],
+    "extractors" : [ ],
     "static_fields" : { }
   } ],
   "streams" : [ {
