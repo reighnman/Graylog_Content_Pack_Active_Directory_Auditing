@@ -1,6 +1,6 @@
 # Active Directory Auditing Content Pack
 
-Tested with nxLog/Graylog 1.2
+Tested with nxLog/Windows 2008R2 Domain Controllers/Graylog 1.2
 
 This content pack provides several useful dashboards for auditing Active Directory events:
 * DNS Object Summary - DNS Creations, Deletions
