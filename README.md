@@ -25,6 +25,7 @@ This content pack provides several useful dashboards for auditing Active Directo
 ** Audit Object Access
 ** Audit Policy Change
 ** Audit System Events
+* Leading Wildcard Searches enabled in graylog.conf:  allow_leading_wildcard_searches = true
 
 ## NXLog Example
 ```
