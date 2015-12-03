@@ -34,66 +34,6 @@
     "title" : "AD Summary (7d)",
     "description" : "AD Summary (7d)",
     "dashboard_widgets" : [ {
-      "description" : "Account Creations",
-      "type" : "SEARCH_RESULT_COUNT",
-      "configuration" : {
-        "timerange" : {
-          "type" : "relative",
-          "range" : 604800
-        },
-        "lower_is_better" : false,
-        "trend" : true,
-        "query" : "((EventID:631 OR EventID:635 OR EventID:658 OR EventID:4727 OR EventID:4731 OR EventID:4754) AND facility:Microsoft\\-Windows\\-Security\\-Auditing)"
-      },
-      "col" : 1,
-      "row" : 1,
-      "cache_time" : 300
-    }, {
-      "description" : "Groups Created",
-      "type" : "SEARCH_RESULT_COUNT",
-      "configuration" : {
-        "timerange" : {
-          "type" : "relative",
-          "range" : 604800
-        },
-        "lower_is_better" : false,
-        "trend" : true,
-        "query" : "((EventID:631 OR EventID:635 OR EventID:658 OR EventID:4727 OR EventID:4731 OR EventID:4754) AND facility:Microsoft\\-Windows\\-Security\\-Auditing)"
-      },
-      "col" : 3,
-      "row" : 1,
-      "cache_time" : 300
-    }, {
-      "description" : "Account Deletions",
-      "type" : "SEARCH_RESULT_COUNT",
-      "configuration" : {
-        "timerange" : {
-          "type" : "relative",
-          "range" : 604800
-        },
-        "lower_is_better" : false,
-        "trend" : true,
-        "query" : "((EventID:630 OR EventID:4726) AND facility:Microsoft\\-Windows\\-Security\\-Auditing)"
-      },
-      "col" : 1,
-      "row" : 2,
-      "cache_time" : 300
-    }, {
-      "description" : "Groups Deleted",
-      "type" : "SEARCH_RESULT_COUNT",
-      "configuration" : {
-        "timerange" : {
-          "type" : "relative",
-          "range" : 604800
-        },
-        "lower_is_better" : false,
-        "trend" : true,
-        "query" : "((EventID:634 OR EventID:638 OR EventID:662 OR EventID:4730 OR EventID:4734 OR EventID:4758) AND facility:Microsoft\\-Windows\\-Security\\-Auditing)"
-      },
-      "col" : 4,
-      "row" : 1,
-      "cache_time" : 300
-    }, {
       "description" : "Account Lockouts ",
       "type" : "SEARCH_RESULT_COUNT",
       "configuration" : {
@@ -109,7 +49,7 @@
       "row" : 1,
       "cache_time" : 300
     }, {
-      "description" : "Group Membership Changes",
+      "description" : "Account Creations",
       "type" : "SEARCH_RESULT_COUNT",
       "configuration" : {
         "timerange" : {
@@ -118,13 +58,13 @@
         },
         "lower_is_better" : false,
         "trend" : true,
-        "query" : "(((EventID:4728 OR EventID:4729 OR EventID:4732 OR EventID:4733 OR EventID:4756 OR EventID:4757)) AND facility:Microsoft\\-Windows\\-Security\\-Auditing)"
+        "query" : "EventID:631 OR EventID:635 OR EventID:658 OR EventID:4727 OR EventID:4731 OR EventID:4754"
       },
-      "col" : 3,
-      "row" : 2,
+      "col" : 1,
+      "row" : 1,
       "cache_time" : 300
     }, {
-      "description" : "Group Modifications",
+      "description" : "Groups Created",
       "type" : "SEARCH_RESULT_COUNT",
       "configuration" : {
         "timerange" : {
@@ -133,9 +73,24 @@
         },
         "lower_is_better" : false,
         "trend" : true,
-        "query" : "((EventID:4764 OR EventID:4735 OR EventID:4737 OR EventID:4755) AND facility:Microsoft\\-Windows\\-Security\\-Auditing AND NOT SamAccountName:\\-)"
+        "query" : "EventID:631 OR EventID:635 OR EventID:658 OR EventID:4727 OR EventID:4731 OR EventID:4754"
       },
-      "col" : 4,
+      "col" : 3,
+      "row" : 1,
+      "cache_time" : 300
+    }, {
+      "description" : "Account Deletions",
+      "type" : "SEARCH_RESULT_COUNT",
+      "configuration" : {
+        "timerange" : {
+          "type" : "relative",
+          "range" : 604800
+        },
+        "lower_is_better" : false,
+        "trend" : true,
+        "query" : "EventID:630 OR EventID:4726"
+      },
+      "col" : 1,
       "row" : 2,
       "cache_time" : 300
     }, {
@@ -152,6 +107,51 @@
       },
       "col" : 2,
       "row" : 2,
+      "cache_time" : 300
+    }, {
+      "description" : "Group Membership Changes",
+      "type" : "SEARCH_RESULT_COUNT",
+      "configuration" : {
+        "timerange" : {
+          "type" : "relative",
+          "range" : 604800
+        },
+        "lower_is_better" : false,
+        "trend" : true,
+        "query" : "EventID:4728 OR EventID:4729 OR EventID:4732 OR EventID:4733 OR EventID:4756 OR EventID:4757"
+      },
+      "col" : 3,
+      "row" : 2,
+      "cache_time" : 300
+    }, {
+      "description" : "Group Modifications",
+      "type" : "SEARCH_RESULT_COUNT",
+      "configuration" : {
+        "timerange" : {
+          "type" : "relative",
+          "range" : 604800
+        },
+        "lower_is_better" : false,
+        "trend" : true,
+        "query" : "((EventID:4764 OR EventID:4735 OR EventID:4737 OR EventID:4755) AND NOT SamAccountName:\\-)"
+      },
+      "col" : 4,
+      "row" : 2,
+      "cache_time" : 300
+    }, {
+      "description" : "Groups Deleted",
+      "type" : "SEARCH_RESULT_COUNT",
+      "configuration" : {
+        "timerange" : {
+          "type" : "relative",
+          "range" : 604800
+        },
+        "lower_is_better" : false,
+        "trend" : true,
+        "query" : "EventID:634 OR EventID:638 OR EventID:662 OR EventID:4730 OR EventID:4734 OR EventID:4758"
+      },
+      "col" : 4,
+      "row" : 1,
       "cache_time" : 300
     } ]
   }, {
@@ -316,76 +316,6 @@
     "title" : "AD User Object Summary (7d)",
     "description" : "AD User Object Creations/Deletions",
     "dashboard_widgets" : [ {
-      "description" : "Accounts Created By Source",
-      "type" : "QUICKVALUES",
-      "configuration" : {
-        "field" : "source",
-        "query" : "((EventID:624 OR EventID:4720) AND facility:Microsoft\\-Windows\\-Security\\-Auditing)",
-        "timerange" : {
-          "range" : 604800,
-          "type" : "relative"
-        }
-      },
-      "col" : 2,
-      "row" : 2,
-      "cache_time" : 300
-    }, {
-      "description" : "Created Accounts",
-      "type" : "QUICKVALUES",
-      "configuration" : {
-        "field" : "SamAccountName",
-        "query" : "((EventID:624 OR EventID:4720) AND facility:Microsoft\\-Windows\\-Security\\-Auditing)",
-        "timerange" : {
-          "range" : 604800,
-          "type" : "relative"
-        }
-      },
-      "col" : 3,
-      "row" : 2,
-      "cache_time" : 300
-    }, {
-      "description" : "Deleted Accounts",
-      "type" : "QUICKVALUES",
-      "configuration" : {
-        "field" : "TargetUserName",
-        "query" : "((EventID:630 OR EventID:4726) AND facility:Microsoft\\-Windows\\-Security\\-Auditing)",
-        "timerange" : {
-          "range" : 604800,
-          "type" : "relative"
-        }
-      },
-      "col" : 3,
-      "row" : 5,
-      "cache_time" : 300
-    }, {
-      "description" : "Accounts Deleted By Source",
-      "type" : "QUICKVALUES",
-      "configuration" : {
-        "field" : "source",
-        "query" : "((EventID:630 OR EventID:4726) AND facility:Microsoft\\-Windows\\-Security\\-Auditing)",
-        "timerange" : {
-          "range" : 604800,
-          "type" : "relative"
-        }
-      },
-      "col" : 2,
-      "row" : 5,
-      "cache_time" : 300
-    }, {
-      "description" : "Accounts Deleted By User",
-      "type" : "QUICKVALUES",
-      "configuration" : {
-        "field" : "SubjectUserName",
-        "query" : "((EventID:630 OR EventID:4726) AND facility:Microsoft\\-Windows\\-Security\\-Auditing)",
-        "timerange" : {
-          "range" : 604800,
-          "type" : "relative"
-        }
-      },
-      "col" : 1,
-      "row" : 5,
-      "cache_time" : 300
-    }, {
       "description" : "Account Unlocks By User",
       "type" : "QUICKVALUES",
       "configuration" : {
@@ -428,20 +358,6 @@
       "row" : 11,
       "cache_time" : 10
     }, {
-      "description" : "Accounts Lockedout",
-      "type" : "QUICKVALUES",
-      "configuration" : {
-        "field" : "TargetUserName",
-        "query" : "EventID:4740",
-        "timerange" : {
-          "range" : 604800,
-          "type" : "relative"
-        }
-      },
-      "col" : 3,
-      "row" : 8,
-      "cache_time" : 10
-    }, {
       "description" : "Account Lockouts By Source",
       "type" : "QUICKVALUES",
       "configuration" : {
@@ -470,7 +386,7 @@
       "row" : 8,
       "cache_time" : 10
     }, {
-      "description" : "Account Creations",
+      "description" : "Account Unlocks",
       "type" : "SEARCH_RESULT_COUNT",
       "configuration" : {
         "timerange" : {
@@ -479,13 +395,13 @@
         },
         "lower_is_better" : false,
         "trend" : false,
-        "query" : "((EventID:624 OR EventID:4720) AND facility:Microsoft\\-Windows\\-Security\\-Auditing)"
+        "query" : "EventID:4767"
       },
       "col" : 3,
-      "row" : 1,
-      "cache_time" : 300
+      "row" : 10,
+      "cache_time" : 10
     }, {
-      "description" : "Account Creations",
+      "description" : "Account Unlocks",
       "type" : "SEARCH_RESULT_CHART",
       "configuration" : {
         "timerange" : {
@@ -493,10 +409,164 @@
           "range" : 604800
         },
         "interval" : "hour",
-        "query" : "((EventID:624 OR EventID:4720) AND facility:Microsoft\\-Windows\\-Security\\-Auditing)"
+        "query" : "EventID:4767"
       },
       "col" : 1,
-      "row" : 1,
+      "row" : 10,
+      "cache_time" : 10
+    }, {
+      "description" : "Account Lockouts",
+      "type" : "SEARCH_RESULT_CHART",
+      "configuration" : {
+        "timerange" : {
+          "type" : "relative",
+          "range" : 604800
+        },
+        "interval" : "hour",
+        "query" : "EventID:4740"
+      },
+      "col" : 1,
+      "row" : 7,
+      "cache_time" : 10
+    }, {
+      "description" : "Account Lockouts",
+      "type" : "SEARCH_RESULT_COUNT",
+      "configuration" : {
+        "timerange" : {
+          "type" : "relative",
+          "range" : 604800
+        },
+        "lower_is_better" : false,
+        "trend" : false,
+        "query" : "EventID:4740"
+      },
+      "col" : 3,
+      "row" : 7,
+      "cache_time" : 10
+    }, {
+      "description" : "Accounts Lockedout",
+      "type" : "QUICKVALUES",
+      "configuration" : {
+        "timerange" : {
+          "type" : "relative",
+          "range" : 604800
+        },
+        "field" : "TargetUserName",
+        "show_pie_chart" : false,
+        "query" : "EventID:4740",
+        "show_data_table" : true
+      },
+      "col" : 3,
+      "row" : 8,
+      "cache_time" : 10
+    }, {
+      "description" : "Accounts Deleted By Source",
+      "type" : "QUICKVALUES",
+      "configuration" : {
+        "timerange" : {
+          "type" : "relative",
+          "range" : 604800
+        },
+        "field" : "source",
+        "show_pie_chart" : false,
+        "query" : "EventID:630 OR EventID:4726",
+        "show_data_table" : true
+      },
+      "col" : 2,
+      "row" : 5,
+      "cache_time" : 300
+    }, {
+      "description" : "Deleted Accounts",
+      "type" : "QUICKVALUES",
+      "configuration" : {
+        "timerange" : {
+          "type" : "relative",
+          "range" : 604800
+        },
+        "field" : "TargetUserName",
+        "show_pie_chart" : false,
+        "query" : "EventID:630 OR EventID:4726",
+        "show_data_table" : true
+      },
+      "col" : 3,
+      "row" : 5,
+      "cache_time" : 300
+    }, {
+      "description" : "Accounts Deleted By User",
+      "type" : "QUICKVALUES",
+      "configuration" : {
+        "timerange" : {
+          "type" : "relative",
+          "range" : 604800
+        },
+        "field" : "SubjectUserName",
+        "show_pie_chart" : false,
+        "query" : "EventID:630 OR EventID:4726",
+        "show_data_table" : true
+      },
+      "col" : 1,
+      "row" : 5,
+      "cache_time" : 300
+    }, {
+      "description" : "Account Deletions",
+      "type" : "SEARCH_RESULT_COUNT",
+      "configuration" : {
+        "timerange" : {
+          "type" : "relative",
+          "range" : 604800
+        },
+        "lower_is_better" : false,
+        "trend" : false,
+        "query" : "EventID:630 OR EventID:4726"
+      },
+      "col" : 3,
+      "row" : 4,
+      "cache_time" : 300
+    }, {
+      "description" : "Account Deletions",
+      "type" : "SEARCH_RESULT_CHART",
+      "configuration" : {
+        "timerange" : {
+          "type" : "relative",
+          "range" : 604800
+        },
+        "interval" : "hour",
+        "query" : "EventID:630 OR EventID:4726"
+      },
+      "col" : 1,
+      "row" : 4,
+      "cache_time" : 300
+    }, {
+      "description" : "Created Accounts",
+      "type" : "QUICKVALUES",
+      "configuration" : {
+        "timerange" : {
+          "type" : "relative",
+          "range" : 604800
+        },
+        "field" : "SamAccountName",
+        "show_pie_chart" : false,
+        "query" : "EventID:624 OR EventID:4720",
+        "show_data_table" : true
+      },
+      "col" : 3,
+      "row" : 2,
+      "cache_time" : 300
+    }, {
+      "description" : "Accounts Created By Source",
+      "type" : "QUICKVALUES",
+      "configuration" : {
+        "timerange" : {
+          "type" : "relative",
+          "range" : 604800
+        },
+        "field" : "source",
+        "show_pie_chart" : false,
+        "query" : "EventID:624 OR EventID:4720",
+        "show_data_table" : true
+      },
+      "col" : 2,
+      "row" : 2,
       "cache_time" : 300
     }, {
       "description" : "Accounts Created By User",
@@ -508,14 +578,14 @@
         },
         "field" : "SubjectUserName",
         "show_pie_chart" : false,
-        "query" : "((EventID:624 OR EventID:4720) AND facility:Microsoft\\-Windows\\-Security\\-Auditing)",
+        "query" : "EventID:624 OR EventID:4720",
         "show_data_table" : true
       },
       "col" : 1,
       "row" : 2,
       "cache_time" : 300
     }, {
-      "description" : "Account Deletions",
+      "description" : "Account Creations",
       "type" : "SEARCH_RESULT_COUNT",
       "configuration" : {
         "timerange" : {
@@ -524,13 +594,13 @@
         },
         "lower_is_better" : false,
         "trend" : false,
-        "query" : "((EventID:630 OR EventID:4726) AND facility:Microsoft\\-Windows\\-Security\\-Auditing)"
+        "query" : "EventID:624 OR EventID:4720"
       },
       "col" : 3,
-      "row" : 4,
+      "row" : 1,
       "cache_time" : 300
     }, {
-      "description" : "Account Deletions",
+      "description" : "Account Creations",
       "type" : "SEARCH_RESULT_CHART",
       "configuration" : {
         "timerange" : {
@@ -538,69 +608,11 @@
           "range" : 604800
         },
         "interval" : "hour",
-        "query" : "((EventID:630 OR EventID:4726) AND facility:Microsoft\\-Windows\\-Security\\-Auditing)"
+        "query" : "EventID:624 OR EventID:4720"
       },
       "col" : 1,
-      "row" : 4,
+      "row" : 1,
       "cache_time" : 300
-    }, {
-      "description" : "Account Lockouts",
-      "type" : "SEARCH_RESULT_CHART",
-      "configuration" : {
-        "timerange" : {
-          "type" : "relative",
-          "range" : 604800
-        },
-        "interval" : "hour",
-        "query" : "EventID:4740"
-      },
-      "col" : 1,
-      "row" : 7,
-      "cache_time" : 10
-    }, {
-      "description" : "Account Lockouts",
-      "type" : "SEARCH_RESULT_COUNT",
-      "configuration" : {
-        "timerange" : {
-          "type" : "relative",
-          "range" : 604800
-        },
-        "lower_is_better" : false,
-        "trend" : false,
-        "query" : "EventID:4740"
-      },
-      "col" : 3,
-      "row" : 7,
-      "cache_time" : 10
-    }, {
-      "description" : "Account Unlocks",
-      "type" : "SEARCH_RESULT_COUNT",
-      "configuration" : {
-        "timerange" : {
-          "type" : "relative",
-          "range" : 604800
-        },
-        "lower_is_better" : false,
-        "trend" : false,
-        "query" : "EventID:4767"
-      },
-      "col" : 3,
-      "row" : 10,
-      "cache_time" : 10
-    }, {
-      "description" : "Account Unlocks",
-      "type" : "SEARCH_RESULT_CHART",
-      "configuration" : {
-        "timerange" : {
-          "type" : "relative",
-          "range" : 604800
-        },
-        "interval" : "hour",
-        "query" : "EventID:4767"
-      },
-      "col" : 1,
-      "row" : 10,
-      "cache_time" : 10
     } ]
   }, {
     "title" : "AD Logon Summary (2h)",
@@ -764,199 +776,19 @@
     "title" : "AD Group Object Summary (7d)",
     "description" : "AD Group Object Summary(7d)",
     "dashboard_widgets" : [ {
-      "description" : "Group Membership Changes (7days)",
-      "type" : "SEARCH_RESULT_CHART",
-      "configuration" : {
-        "interval" : "hour",
-        "query" : "(((EventID:4728 OR EventID:4729 OR EventID:4732 OR EventID:4733 OR EventID:4756 OR EventID:4757)) AND facility:Microsoft\\-Windows\\-Security\\-Auditing)",
-        "timerange" : {
-          "range" : 604800,
-          "type" : "relative"
-        }
-      },
-      "col" : 1,
-      "row" : 7,
-      "cache_time" : 300
-    }, {
-      "description" : "Group Membership Changes (7days)",
+      "description" : "Group Creations ",
       "type" : "SEARCH_RESULT_COUNT",
       "configuration" : {
-        "query" : "(((EventID:4728 OR EventID:4729 OR EventID:4732 OR EventID:4733 OR EventID:4756 OR EventID:4757)) AND facility:Microsoft\\-Windows\\-Security\\-Auditing)",
         "timerange" : {
-          "range" : 604800,
-          "type" : "relative"
-        }
+          "type" : "relative",
+          "range" : 604800
+        },
+        "lower_is_better" : false,
+        "trend" : false,
+        "query" : "EventID:631 OR EventID:635 OR EventID:658 OR EventID:4727 OR EventID:4731 OR EventID:4754"
       },
       "col" : 3,
-      "row" : 7,
-      "cache_time" : 300
-    }, {
-      "description" : "Deleted Groups",
-      "type" : "QUICKVALUES",
-      "configuration" : {
-        "field" : "TargetUserName",
-        "query" : "((EventID:634 OR EventID:638 OR EventID:662 OR EventID:4730 OR EventID:4734 OR EventID:4758) AND facility:Microsoft\\-Windows\\-Security\\-Auditing)",
-        "timerange" : {
-          "range" : 604800,
-          "type" : "relative"
-        }
-      },
-      "col" : 3,
-      "row" : 5,
-      "cache_time" : 300
-    }, {
-      "description" : "Group Deletions By Source",
-      "type" : "QUICKVALUES",
-      "configuration" : {
-        "field" : "source",
-        "query" : "((EventID:634 OR EventID:638 OR EventID:662 OR EventID:4730 OR EventID:4734 OR EventID:4758) AND facility:Microsoft\\-Windows\\-Security\\-Auditing)",
-        "timerange" : {
-          "range" : 604800,
-          "type" : "relative"
-        }
-      },
-      "col" : 2,
-      "row" : 5,
-      "cache_time" : 300
-    }, {
-      "description" : "Group Deletions By User",
-      "type" : "QUICKVALUES",
-      "configuration" : {
-        "field" : "SubjectUserName",
-        "query" : "((EventID:634 OR EventID:638 OR EventID:662 OR EventID:4730 OR EventID:4734 OR EventID:4758) AND facility:Microsoft\\-Windows\\-Security\\-Auditing)",
-        "timerange" : {
-          "range" : 604800,
-          "type" : "relative"
-        }
-      },
-      "col" : 1,
-      "row" : 5,
-      "cache_time" : 300
-    }, {
-      "description" : "Created Groups",
-      "type" : "QUICKVALUES",
-      "configuration" : {
-        "field" : "TargetUserName",
-        "query" : "((EventID:631 OR EventID:635 OR EventID:658 OR EventID:4727 OR EventID:4731 OR EventID:4754) AND facility:Microsoft\\-Windows\\-Security\\-Auditing)",
-        "timerange" : {
-          "range" : 604800,
-          "type" : "relative"
-        }
-      },
-      "col" : 3,
-      "row" : 2,
-      "cache_time" : 300
-    }, {
-      "description" : "Groups Modified",
-      "type" : "QUICKVALUES",
-      "configuration" : {
-        "field" : "TargetUserName",
-        "query" : "((EventID:4764 OR EventID:4735 OR EventID:4737 OR EventID:4755) AND facility:Microsoft\\-Windows\\-Security\\-Auditing AND NOT SamAccountName:\\-)",
-        "timerange" : {
-          "range" : 604800,
-          "type" : "relative"
-        }
-      },
-      "col" : 3,
-      "row" : 11,
-      "cache_time" : 10
-    }, {
-      "description" : "Groups Modified By User",
-      "type" : "QUICKVALUES",
-      "configuration" : {
-        "field" : "SubjectUserName",
-        "query" : "((EventID:4764 OR EventID:4735 OR EventID:4737 OR EventID:4755) AND facility:Microsoft\\-Windows\\-Security\\-Auditing AND NOT SamAccountName:\\-)",
-        "timerange" : {
-          "range" : 604800,
-          "type" : "relative"
-        }
-      },
-      "col" : 1,
-      "row" : 11,
-      "cache_time" : 10
-    }, {
-      "description" : "Groups Modified By Source",
-      "type" : "QUICKVALUES",
-      "configuration" : {
-        "field" : "source",
-        "query" : "((EventID:4764 OR EventID:4735 OR EventID:4737 OR EventID:4755) AND facility:Microsoft\\-Windows\\-Security\\-Auditing AND NOT SamAccountName:\\-)",
-        "timerange" : {
-          "range" : 604800,
-          "type" : "relative"
-        }
-      },
-      "col" : 2,
-      "row" : 11,
-      "cache_time" : 10
-    }, {
-      "description" : "Group Membership Changes By User",
-      "type" : "QUICKVALUES",
-      "configuration" : {
-        "field" : "SubjectUserName",
-        "query" : "(((EventID:4728 OR EventID:4729 OR EventID:4732 OR EventID:4733 OR EventID:4756 OR EventID:4757)) AND facility:Microsoft\\-Windows\\-Security\\-Auditing)",
-        "timerange" : {
-          "range" : 604800,
-          "type" : "relative"
-        }
-      },
-      "col" : 1,
-      "row" : 8,
-      "cache_time" : 300
-    }, {
-      "description" : "Group Membership Changes By Source",
-      "type" : "QUICKVALUES",
-      "configuration" : {
-        "field" : "source",
-        "query" : "(((EventID:4728 OR EventID:4729 OR EventID:4732 OR EventID:4733 OR EventID:4756 OR EventID:4757)) AND facility:Microsoft\\-Windows\\-Security\\-Auditing)",
-        "timerange" : {
-          "range" : 604800,
-          "type" : "relative"
-        }
-      },
-      "col" : 2,
-      "row" : 8,
-      "cache_time" : 300
-    }, {
-      "description" : "Group Membership Changed",
-      "type" : "QUICKVALUES",
-      "configuration" : {
-        "field" : "TargetUserName",
-        "query" : "(((EventID:4728 OR EventID:4729 OR EventID:4732 OR EventID:4733 OR EventID:4756 OR EventID:4757)) AND facility:Microsoft\\-Windows\\-Security\\-Auditing)",
-        "timerange" : {
-          "range" : 604800,
-          "type" : "relative"
-        }
-      },
-      "col" : 3,
-      "row" : 8,
-      "cache_time" : 300
-    }, {
-      "description" : "Group Creations By User",
-      "type" : "QUICKVALUES",
-      "configuration" : {
-        "field" : "SubjectUserName",
-        "query" : "((EventID:631 OR EventID:635 OR EventID:658 OR EventID:4727 OR EventID:4731 OR EventID:4754) AND facility:Microsoft\\-Windows\\-Security\\-Auditing)",
-        "timerange" : {
-          "range" : 604800,
-          "type" : "relative"
-        }
-      },
-      "col" : 1,
-      "row" : 2,
-      "cache_time" : 300
-    }, {
-      "description" : "Group Creations By Source",
-      "type" : "QUICKVALUES",
-      "configuration" : {
-        "field" : "source",
-        "query" : "((EventID:631 OR EventID:635 OR EventID:658 OR EventID:4727 OR EventID:4731 OR EventID:4754) AND facility:Microsoft\\-Windows\\-Security\\-Auditing)",
-        "timerange" : {
-          "range" : 604800,
-          "type" : "relative"
-        }
-      },
-      "col" : 2,
-      "row" : 2,
+      "row" : 1,
       "cache_time" : 300
     }, {
       "description" : "Group Creations",
@@ -967,25 +799,58 @@
           "range" : 604800
         },
         "interval" : "hour",
-        "query" : "((EventID:631 OR EventID:635 OR EventID:658 OR EventID:4727 OR EventID:4731 OR EventID:4754) AND facility:Microsoft\\-Windows\\-Security\\-Auditing)"
+        "query" : "EventID:631 OR EventID:635 OR EventID:658 OR EventID:4727 OR EventID:4731 OR EventID:4754"
       },
       "col" : 1,
       "row" : 1,
       "cache_time" : 300
     }, {
-      "description" : "Group Creations ",
-      "type" : "SEARCH_RESULT_COUNT",
+      "description" : "Group Creations By User",
+      "type" : "QUICKVALUES",
       "configuration" : {
         "timerange" : {
           "type" : "relative",
           "range" : 604800
         },
-        "lower_is_better" : false,
-        "trend" : false,
-        "query" : "((EventID:631 OR EventID:635 OR EventID:658 OR EventID:4727 OR EventID:4731 OR EventID:4754) AND facility:Microsoft\\-Windows\\-Security\\-Auditing)"
+        "field" : "SubjectUserName",
+        "show_pie_chart" : false,
+        "query" : "EventID:631 OR EventID:635 OR EventID:658 OR EventID:4727 OR EventID:4731 OR EventID:4754",
+        "show_data_table" : true
+      },
+      "col" : 1,
+      "row" : 2,
+      "cache_time" : 300
+    }, {
+      "description" : "Group Creations By Source",
+      "type" : "QUICKVALUES",
+      "configuration" : {
+        "timerange" : {
+          "type" : "relative",
+          "range" : 604800
+        },
+        "field" : "source",
+        "show_pie_chart" : false,
+        "query" : "EventID:631 OR EventID:635 OR EventID:658 OR EventID:4727 OR EventID:4731 OR EventID:4754",
+        "show_data_table" : true
+      },
+      "col" : 2,
+      "row" : 2,
+      "cache_time" : 300
+    }, {
+      "description" : "Created Groups",
+      "type" : "QUICKVALUES",
+      "configuration" : {
+        "timerange" : {
+          "type" : "relative",
+          "range" : 604800
+        },
+        "field" : "TargetUserName",
+        "show_pie_chart" : false,
+        "query" : "EventID:631 OR EventID:635 OR EventID:658 OR EventID:4727 OR EventID:4731 OR EventID:4754",
+        "show_data_table" : true
       },
       "col" : 3,
-      "row" : 1,
+      "row" : 2,
       "cache_time" : 300
     }, {
       "description" : "Group Deletions",
@@ -996,7 +861,7 @@
           "range" : 604800
         },
         "interval" : "hour",
-        "query" : "((EventID:634 OR EventID:638 OR EventID:662 OR EventID:4730 OR EventID:4734 OR EventID:4758) AND facility:Microsoft\\-Windows\\-Security\\-Auditing)"
+        "query" : "EventID:634 OR EventID:638 OR EventID:662 OR EventID:4730 OR EventID:4734 OR EventID:4758"
       },
       "col" : 1,
       "row" : 4,
@@ -1011,10 +876,25 @@
         },
         "lower_is_better" : false,
         "trend" : false,
-        "query" : "((EventID:634 OR EventID:638 OR EventID:662 OR EventID:4730 OR EventID:4734 OR EventID:4758) AND facility:Microsoft\\-Windows\\-Security\\-Auditing)"
+        "query" : "EventID:634 OR EventID:638 OR EventID:662 OR EventID:4730 OR EventID:4734 OR EventID:4758"
       },
       "col" : 3,
       "row" : 4,
+      "cache_time" : 300
+    }, {
+      "description" : "Groups Modified",
+      "type" : "SEARCH_RESULT_COUNT",
+      "configuration" : {
+        "timerange" : {
+          "type" : "relative",
+          "range" : 604800
+        },
+        "lower_is_better" : false,
+        "trend" : false,
+        "query" : "((EventID:4764 OR EventID:4735 OR EventID:4737 OR EventID:4755) AND NOT SamAccountName:\\-)"
+      },
+      "col" : 3,
+      "row" : 10,
       "cache_time" : 300
     }, {
       "description" : "Groups Modified",
@@ -1025,13 +905,155 @@
           "range" : 604800
         },
         "interval" : "hour",
-        "query" : "((EventID:4764 OR EventID:4735 OR EventID:4737 OR EventID:4755) AND facility:Microsoft\\-Windows\\-Security\\-Auditing AND NOT SamAccountName:\\-)"
+        "query" : "((EventID:4764 OR EventID:4735 OR EventID:4737 OR EventID:4755) AND NOT SamAccountName:\\-)"
       },
       "col" : 1,
       "row" : 10,
       "cache_time" : 10
     }, {
       "description" : "Groups Modified",
+      "type" : "QUICKVALUES",
+      "configuration" : {
+        "timerange" : {
+          "type" : "relative",
+          "range" : 604800
+        },
+        "field" : "TargetUserName",
+        "show_pie_chart" : false,
+        "query" : "((EventID:4764 OR EventID:4735 OR EventID:4737 OR EventID:4755) AND NOT SamAccountName:\\-)",
+        "show_data_table" : true
+      },
+      "col" : 3,
+      "row" : 11,
+      "cache_time" : 10
+    }, {
+      "description" : "Groups Modified By Source",
+      "type" : "QUICKVALUES",
+      "configuration" : {
+        "timerange" : {
+          "type" : "relative",
+          "range" : 604800
+        },
+        "field" : "source",
+        "show_pie_chart" : false,
+        "query" : "((EventID:4764 OR EventID:4735 OR EventID:4737 OR EventID:4755) AND NOT SamAccountName:\\-)",
+        "show_data_table" : true
+      },
+      "col" : 2,
+      "row" : 11,
+      "cache_time" : 10
+    }, {
+      "description" : "Groups Modified By User",
+      "type" : "QUICKVALUES",
+      "configuration" : {
+        "timerange" : {
+          "type" : "relative",
+          "range" : 604800
+        },
+        "field" : "SubjectUserName",
+        "show_pie_chart" : false,
+        "query" : "((EventID:4764 OR EventID:4735 OR EventID:4737 OR EventID:4755) AND NOT SamAccountName:\\-)",
+        "show_data_table" : true
+      },
+      "col" : 1,
+      "row" : 11,
+      "cache_time" : 10
+    }, {
+      "description" : "Membership Changes",
+      "type" : "QUICKVALUES",
+      "configuration" : {
+        "timerange" : {
+          "type" : "relative",
+          "range" : 604800
+        },
+        "field" : "TargetUserName",
+        "show_pie_chart" : false,
+        "query" : "EventID:4728 OR EventID:4729 OR EventID:4732 OR EventID:4733 OR EventID:4756 OR EventID:4757",
+        "show_data_table" : true
+      },
+      "col" : 3,
+      "row" : 8,
+      "cache_time" : 300
+    }, {
+      "description" : "Membership Changes By Source",
+      "type" : "QUICKVALUES",
+      "configuration" : {
+        "timerange" : {
+          "type" : "relative",
+          "range" : 604800
+        },
+        "field" : "source",
+        "show_pie_chart" : false,
+        "query" : "EventID:4728 OR EventID:4729 OR EventID:4732 OR EventID:4733 OR EventID:4756 OR EventID:4757",
+        "show_data_table" : true
+      },
+      "col" : 2,
+      "row" : 8,
+      "cache_time" : 300
+    }, {
+      "description" : "Membership Changes By User",
+      "type" : "QUICKVALUES",
+      "configuration" : {
+        "timerange" : {
+          "type" : "relative",
+          "range" : 604800
+        },
+        "field" : "SubjectUserName",
+        "show_pie_chart" : false,
+        "query" : "EventID:4728 OR EventID:4729 OR EventID:4732 OR EventID:4733 OR EventID:4756 OR EventID:4757",
+        "show_data_table" : true
+      },
+      "col" : 1,
+      "row" : 8,
+      "cache_time" : 300
+    }, {
+      "description" : "Group Deletions By Source",
+      "type" : "QUICKVALUES",
+      "configuration" : {
+        "timerange" : {
+          "type" : "relative",
+          "range" : 604800
+        },
+        "field" : "source",
+        "show_pie_chart" : false,
+        "query" : "EventID:634 OR EventID:638 OR EventID:662 OR EventID:4730 OR EventID:4734 OR EventID:4758",
+        "show_data_table" : true
+      },
+      "col" : 2,
+      "row" : 5,
+      "cache_time" : 300
+    }, {
+      "description" : "Deleted Groups",
+      "type" : "QUICKVALUES",
+      "configuration" : {
+        "timerange" : {
+          "type" : "relative",
+          "range" : 604800
+        },
+        "field" : "TargetUserName",
+        "show_pie_chart" : false,
+        "query" : "EventID:634 OR EventID:638 OR EventID:662 OR EventID:4730 OR EventID:4734 OR EventID:4758",
+        "show_data_table" : true
+      },
+      "col" : 3,
+      "row" : 5,
+      "cache_time" : 300
+    }, {
+      "description" : "Membership Changes",
+      "type" : "SEARCH_RESULT_CHART",
+      "configuration" : {
+        "timerange" : {
+          "type" : "relative",
+          "range" : 604800
+        },
+        "interval" : "hour",
+        "query" : "EventID:4728 OR EventID:4729 OR EventID:4732 OR EventID:4733 OR EventID:4756 OR EventID:4757"
+      },
+      "col" : 1,
+      "row" : 7,
+      "cache_time" : 300
+    }, {
+      "description" : "Membership Changes",
       "type" : "SEARCH_RESULT_COUNT",
       "configuration" : {
         "timerange" : {
@@ -1040,10 +1062,26 @@
         },
         "lower_is_better" : false,
         "trend" : false,
-        "query" : "((EventID:4764 OR EventID:4735 OR EventID:4737 OR EventID:4755) AND facility:Microsoft\\-Windows\\-Security\\-Auditing AND NOT SamAccountName:\\-)"
+        "query" : "EventID:4728 OR EventID:4729 OR EventID:4732 OR EventID:4733 OR EventID:4756 OR EventID:4757"
       },
       "col" : 3,
-      "row" : 10,
+      "row" : 7,
+      "cache_time" : 300
+    }, {
+      "description" : "Group Deletions By User",
+      "type" : "QUICKVALUES",
+      "configuration" : {
+        "timerange" : {
+          "type" : "relative",
+          "range" : 604800
+        },
+        "field" : "SubjectUserName",
+        "show_pie_chart" : false,
+        "query" : "EventID:634 OR EventID:638 OR EventID:662 OR EventID:4730 OR EventID:4734 OR EventID:4758",
+        "show_data_table" : true
+      },
+      "col" : 1,
+      "row" : 5,
       "cache_time" : 300
     } ]
   }, {
