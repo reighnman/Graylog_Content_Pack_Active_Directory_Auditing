@@ -1,4 +1,4 @@
-# Active Directory Auditing Content Pack
+# Active Directory Auditing Content Pack (Outdated - Please Fork+Update)
 
 Tested with nxLog/Windows 2008R2 Domain Controllers/Graylog 1.2
 
